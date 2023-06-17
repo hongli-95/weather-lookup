@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./Images/cloud.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+p {
+  text-shadow: 1px 1px 2px white;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.city_input {
+  border: none;
+  margin: 20px;
+  padding: 4px;
+  width: 200px;
+  height: max-content;
+  font-size: 1.2rem;
+  transition: ease-in-out 0.2s;
+  border-radius: 5px;
+}
+
+.search_button {
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 1rem;
+  transition: ease-in-out 0.1s;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  color: black;
+}
+
+.search_button:hover {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 2px 2px rgb(222, 222, 255);
+}
+
+.city_input:focus {
+  outline: none;
+  box-shadow: 0px 0px 4px 4px rgb(222, 222, 255);
+}
+
+.card_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  transition: ease-in-out 0.2s;
+}
+
+.Card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+  width: 300px;
+  border-radius: 20px;
+  /* transition: 0.1s ease-in-out; */
+  cursor: pointer;
+  overflow: hidden;
+  align-self: flex-start;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.Card:hover {
+  box-shadow: 0px 0px 4px 4px rgb(214, 214, 255);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.Card_city {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.Card_weather {
+  overflow: hidden;
+}
+
+.weather-icon {
+  transform: translateY(5px);
+  width: 150px;
+  height: 150px;
+}
