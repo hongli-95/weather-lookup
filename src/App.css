@@ -65,7 +65,7 @@ p {
   align-items: center;
   gap: 30px;
   position: relative;
-  transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.1s;
 }
 
 .Card {
@@ -76,7 +76,7 @@ p {
   border: 1px solid white;
   width: 300px;
   border-radius: 20px;
-  /* transition: 0.1s ease-in-out; */
+  transition: 0.1s ease-in;
   cursor: pointer;
   overflow: hidden;
   align-self: flex-start;
@@ -98,10 +98,11 @@ p {
 
 .Card_weather {
   overflow: hidden;
+  transition: 0.2s ease-in;
 }
 
 .weather-icon {
-  transform: translateY(5px);
+  transform: translateY(5px) translateX(25px);
   width: 150px;
   height: 150px;
 }

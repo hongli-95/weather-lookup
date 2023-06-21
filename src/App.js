@@ -7,6 +7,8 @@ function App() {
   const [result, setResult] = useState([]);
   const [currCity, setCurrCity] = useState();
   const [weatherResult, setWeatherResult] = useState();
+  const [cityIsLoading, setCityIsLoading] = useState(false);
+  const [weatherIsLoading, setWeatherIsLoading] = useState(false);
 
   const recordInput = (e) => {
     setInput(e.target.value);
@@ -14,6 +16,7 @@ function App() {
 
   async function fetchCities(city, e) {
     e.preventDefault();
+    setCityIsLoading(true);
     await fetch(
       `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=5&language=en&format=json`
     )
@@ -21,10 +24,12 @@ function App() {
       .then((data) => {
         setResult(data.results);
       });
+    setCityIsLoading(false);
   }
 
   async function fetchWeather(latitude, longitude, timezone, id) {
     let updatedTimezone = timezone.replace("/", "%2F");
+    setWeatherIsLoading(true);
     await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&timezone=${updatedTimezone}&forecast_days=1`
     )
@@ -32,6 +37,7 @@ function App() {
       .then((data) => {
         setWeatherResult(data);
       });
+    setWeatherIsLoading(false);
     setCurrCity(id);
   }
 
@@ -52,7 +58,10 @@ function App() {
           Search
         </button>
       </form>
-      <div className="card_container">
+      <div
+        className="card_container"
+        style={cityIsLoading ? { opacity: "0" } : { opacity: "1" }}
+      >
         {result?.length ? (
           result.map((item) => (
             <Card
@@ -93,6 +102,7 @@ function App() {
                   ? weatherResult?.daily_units.temperature_2m_max
                   : "N/A"
               }
+              weatherIsLoading={weatherIsLoading}
             />
           ))
         ) : (
