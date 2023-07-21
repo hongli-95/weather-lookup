@@ -76,13 +76,13 @@ p {
   border: 1px solid white;
   width: 300px;
   border-radius: 20px;
-  transition: 0.1s ease-in;
   cursor: pointer;
   overflow: hidden;
   align-self: flex-start;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
+  transition: 0.2s ease-in-out;
 }
 
 .Card:hover {
@@ -96,13 +96,50 @@ p {
   font-weight: 600;
 }
 
-.Card_weather {
-  overflow: hidden;
-  transition: 0.2s ease-in;
-}
-
 .weather-icon {
-  transform: translateY(5px) translateX(25px);
   width: 150px;
   height: 150px;
+  align-self: center;
+}
+
+.Info_Card {
+  text-align: center;
+  margin: 20px;
+}
+
+.weather_info_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border: 1px solid white;
+  margin: 20px;
+  /* padding: 20px; */
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
+  gap: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.forecast_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.thermometer-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  align-self: center;
+}
+
+.forecast_info {
+  display: flex;
+  align-items: center;
+}
+
+.Info_Card_curr-temp {
+  font-size: 1.2rem;
 }
