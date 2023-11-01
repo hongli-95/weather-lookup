@@ -21,7 +21,6 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        //console.log(data);
         setResult(data.results);
       });
     setWeatherResult([]);
@@ -35,7 +34,6 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setCurrCity(id);
         const arr = [];
         const today = {
