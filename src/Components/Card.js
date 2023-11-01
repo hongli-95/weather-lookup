@@ -2,9 +2,6 @@ import "../App.css";
 
 export default function Card({ city, state, country, handleClick, selected }) {
   return (
-    // box-shadow: 0px 0px 4px 4px rgb(214, 214, 255);
-    // background-color: rgba(255, 255, 255, 0.9);
-    // color: black;
     <div
       className="Card"
       onClick={handleClick}
