@@ -66,6 +66,7 @@ p {
   gap: 30px;
   position: relative;
   transition: ease-in-out 0.1s;
+  flex-wrap: wrap;
 }
 
 .Card {
